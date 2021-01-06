@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+// function prototype
+void encrypt(char *c);
+void decrypt(char *c);
+int occurence(char _string[], char character);
+
 int main()
 {
     // strings function come from string.h header file
@@ -22,7 +27,54 @@ int main()
     char *_var3 = "Good", *_var4 = " Job";
     int _answer = strcmp(_var3, _var4); // strcmp() this function, Campare the two string character if strings are equal from ASCII values.
     printf("The Compare two String returns : %d\n", _answer);
+    // Character Pointer encrypt and decrypt function
+    char _text[] = "Waleed Good job";
+    encrypt(_text);
+    printf("The Encrypt function returns : %s\n", _text);
+    decrypt(_text);
+    printf("The Decrypt function returns : %s\n", _text);
+    int val = occurence(_text, 'W'); // this function check the letter is
+    printf("The Occurence is %d\n", val);
     system("pause");
+}
 
-    return 0;
+// function defination
+
+// Encrypt Function
+void encrypt(char *c)
+{
+    char *_pointer = c;
+    // While loop
+    while (*_pointer != '\0')
+    {
+        *_pointer = *_pointer + 1;
+        _pointer++;
+    }
+}
+// Decrypt function
+void decrypt(char *c)
+{
+    char *_pointer = c;
+    // While loop
+    while (*_pointer != '\0')
+    {
+        *_pointer = *_pointer - 1;
+        _pointer++;
+    }
+}
+// Decrypt function
+int occurence(char _string[], char character)
+{
+    char *_po = _string;
+    int count = 0;
+    // While loop
+    while (*_po != '\0')
+    {
+        if (*_po == character)
+        {
+            count++;
+        }
+        _po++;
+    }
+    return count;
 }
