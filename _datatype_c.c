@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-int main()
+void main()
 {
     // Data-type in C
     int a = 12;
     float b = 21.1;
     char d = 'A';
-    char *text = "C lang";
+    char *text = "C lang"; // this is a pointer variable character
     double c = 1222.2212;
     short s = 12888.2212;
     long double Ld = 12888.2212;
@@ -21,5 +21,7 @@ int main()
     printf("The value of char d is %c \n", d);
     printf("The value of x is %f \n", x);
     printf("The value of Text is %s \n", text);
+    // Exit the windows if user press any key
+
     system("pause");
 }
